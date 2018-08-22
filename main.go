@@ -20,7 +20,7 @@ func random(min, max int) int {
 }
 
 func main() {
-	pool = tunny.NewFunc(2, worker)
+	pool = tunny.NewFunc(runtime.NumCPU(), worker)
 	defer pool.Close()
 
 	for i := 0; i < 100; i++ {
